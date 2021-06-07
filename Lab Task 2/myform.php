@@ -122,7 +122,7 @@
         }
 
 
-        if (empty($_POST["bg"]))
+        if (empty($_POST['bg']))
         {
           $bgErr = "Select a blood group";
         }
@@ -186,7 +186,7 @@
 
         <fieldset style="width: 300px;height: 80px">
         <legend>BLOOD GROUP</legend>
-        <select name="bg[]">
+        <select name="bg">
         <option></option>
         <option value="A+">A+</option>
         <option value="O+">O+</option>
@@ -202,35 +202,5 @@
 
         <input type="submit">
     </form>
-
-    <?php
-    echo "<h2>Your Input:</h2>";
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $gender;
-    echo "<br>";
-    echo $dd;
-    echo "<br>";
-    echo $mm;
-    echo "<br>";
-    echo $yyyy;
-    echo "<br>";
-    foreach($_POST['gender'] as $value)
-    {
-      echo $value.'<br>';
-    } 
-    echo "<br>";
-    foreach($_POST['deg'] as $value)
-    {
-      echo $value.'<br>';
-    } 
-    echo "<br>";
-    foreach($_POST['bg'] as $value)
-    {
-      echo $value.'<br>';
-    }
-    ?>
   </body>
 </html>
