@@ -19,7 +19,8 @@
 
 
       $cpassErr = $npassErr = $rpassErr = "";
-      $cpass = $npass = $rpass = "";
+      $currpass = "abcd@123";
+      $npass = $rpass =$cpass ="";
 
       if ($_SERVER['REQUEST_METHOD'] == "POST")
       {
@@ -34,7 +35,13 @@
           $npass = test_input ($_POST["npass"]);
           $rpass = test_input ($_POST["rpass"]);
 
-          if (empty($_POST["npass"]))
+          if ($cpass != $currpass)
+          {
+            $cpassErr = "Current password do not match";
+          }
+          else
+          {
+            if (empty($_POST["npass"]))
           {
             $npassErr = "Enter new password";
           }
@@ -57,7 +64,10 @@
               $npass = "";
               $rpass = "";
             }            
-          } 
+          }
+        }
+
+           
         }
       }
     ?>

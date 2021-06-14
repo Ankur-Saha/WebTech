@@ -19,7 +19,7 @@
 
 
       $nameErr = $emailErr = $genderErr = $ddErr = $mmErr = $yyyyErr = $dobErr = $unameErr = $passErr = $cpassErr = "";
-      $name = $email = $gender = $dd = $mm = $yyyy = $uname = $pass = $cpass ="";
+      $name = $email = $gender = $dd = $mm = $yyyy = $uname = $pass = $cpass = $dob ="";
 
       if ($_SERVER['REQUEST_METHOD'] == "POST")
       {
@@ -160,31 +160,37 @@
           $genderErr = "Select a gender";
         }
 
-
-
-
-        if (empty($_POST["deg"]))
-        {
-          $degErr = "Select degrees";
-        }
+        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['uname']) || empty($_POST['gender']) || empty($_POST['dd']) || empty($_POST['mm']) || empty($_POST['yyyy']))
+        {}
         else
         {
-          $checkedDegrees = 0;
-          $values = $_POST['deg'];
-          $checkedDegrees = count($values);
+          if(file_exists('data.json'))  
+           {  
+                $current_data = file_get_contents('data.json');  
+                $array_data = json_decode($current_data, true);  
+                $extra = array(  
+                     'name' => $_POST['name'],  
+                     'e-mail' => $_POST["email"],  
+                     'username' => $_POST["uname"],  
+                     'gender' => $_POST["gender"],
+                     'date' => $_POST["dd"],
+                     'month' => $_POST["mm"],
+                     'year' => $_POST["yyyy"],
 
-          if ($checkedDegrees < 2)
-          {
-            $degErr = "Select at least 2 degrees";
-          }
+                );  
+                $array_data[] = $extra;  
+                $final_data = json_encode($array_data);  
+                if(file_put_contents('data.json', $final_data))  
+                {  
+                     $message = "File Appended Success fully";  
+                }  
+           }  
+           else  
+           {  
+                $error = 'JSON File not exits';  
+           }
         }
-
-
-        if (empty($_POST['bg']))
-        {
-          $bgErr = "Select a blood group";
-        }
-      }
+    }
     ?>
 
 
