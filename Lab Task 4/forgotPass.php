@@ -23,28 +23,9 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Change</title>
-</head>
-
-<body>
-    <table border="0" width="100%">
-        <tr>
-            <td width="550px"><img src="file/logo1.png" alt=""></td>
-            <td width="430px"> </td>
-            <td align="center"><a href="home.php">Home</a> | <a href="login.php">Login | <a href="registration.php">Registration</a></a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td height="600px" align="center">
+<?php include ('header.php') ?>
                 <form method="post" action="">
-                    <fieldset>
+                    <fieldset style="width:280px">
                         <legend><b>FORGOT PASSWORD</b></legend>
                         <table>
                             <tr>
@@ -73,9 +54,4 @@ if (isset($_POST['submit'])) {
             <td></td>
         </tr>
         <tr>
-            <td colspan="3" align="center">Copyright &COPY 2021</td>
-        </tr>
-    </table>
-</body>
-
-</html>
+<?php include ('footer.php') ?>

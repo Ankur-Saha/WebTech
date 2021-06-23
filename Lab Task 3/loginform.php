@@ -64,17 +64,16 @@
           {
             $passErr = "Password does not contain special characters";
           }
-
-          
         }
+
       }
     ?>
 
 
     
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form method="post" action="load.php">
 
-        <fieldset style="width: 600px;height: 200px;">
+        <fieldset style="width: 600px;height: 500px;">
         <legend>LOGIN</legend>
         <br><label>User Name :</label>
         <input type="text" name="name" value="<?php echo $name;?>">
@@ -85,8 +84,13 @@
         <span class="error">* <?php echo $passErr;?></span><br><br><br>
 
         <span><input type="checkbox" name="remember" value="remember"> Remember Me</span><br><br>
-        <input type="submit">
-        <a href="">Forgot Password?</a>
+        <input type="submit" value="Login">
+        
+
+        <a href="">Forgot Password?</a><br><br>
+
+        <span>Don't have an account?</span>
+        <a href="myform.php">Sign up
         </fieldset><br>
 
         
