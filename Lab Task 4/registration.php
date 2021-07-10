@@ -8,16 +8,16 @@ if (isset($_POST['submit'])) {
     $uname = $_POST['uname'];
     $pass = $_POST['pass'];
     $cPass = $_POST['cPass'];
-    if (!isset($_POST['gender'])){}
-    else{
+    if (!isset($_POST['gender'])) {
+    } else {
         $gender = $_POST['gender'];
     }
-    
+
     $date = $_POST['date'];
     $month = $_POST['month'];
     $year = $_POST['year'];
 
-     if($_SERVER['REQUEST_METHOD'] == "POST") {
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (empty($name)) {
             $nameErr = "Name is required.";
         } else {
@@ -126,144 +126,118 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<?php 
-    include('header.php');
+<?php
+include('header.php');
 ?>
+<form method="post" action="">
+    <fieldset style="width:500px">
+        <legend><b>REGISTRATION</b></legend>
+        <table border="0">
+            <tr>
+                <td>Name</td>
+                <td>:
+                    <input type="text" name="name" id="">
+                    <span class="error">* <?php echo $nameErr; ?></span>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <style>
-        .error {
-            color: #FF0000;
-        }
-    </style>
-</head>
-
-<body>
-    <table border="0" width="100%">
-        <tr>
-            <td width="500px"><img src="file/logo.png" alt=""></td>
-            <td width="500px"> </td>
-            <td align="center"><a href="home.php">Home</a> | <a href="login.php">Login | <a href="registration.php">Registration</a></a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td height="600px" align="center"> -->
-                <form method="post" action="">
-                    <fieldset style="width:500px">
-                        <legend><b>REGISTRATION</b></legend>
-                        <table border="0">
-                            <tr>
-                                <td>Name</td>
-                                <td>:
-                                    <input type="text" name="name" id="">
-                                    <span class="error">* <?php echo $nameErr; ?></span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:
-                                    <input type="email" name="email" id="">
-                                    <span class="error">* <?php echo $emailErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>User Name</td>
-                                <td>:
-                                    <input type="text" name="uname" id="">
-                                    <span class="error">* <?php echo $unameErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Password</td>
-                                <td>:
-                                    <input type="password" name="pass" id="">
-                                    <span class="error">* <?php echo $passErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Confirm Password</td>
-                                <td>:
-                                    <input type="password" name="cPass" id="">
-                                    <span class="error">* <?php echo $cpassErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <fieldset>
-                                        <legend>Gender</legend>
-                                        <input type="radio" name="gender" value="Male" id="">Male
-                                        <input type="radio" name="gender" value="Female" id="">Female
-                                        <input type="radio" name="gender" value="Other" id="">Other
-                                    </fieldset>
-                                    <span class="error">* <?php echo $genderErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <fieldset>
-                                        <legend>Date Of Birth</legend>
-                                        <input type="tel" name="date" id="" size="1"> /
-                                        <input type="tel" name="month" id="" size="1"> /
-                                        <input type="tel" name="year" id="" size="1"> <i>(dd/mm/yy)</i>
-                                    </fieldset>
-                                    <span class="error">* <?php echo $ddErr; ?></span>
-                                    <span class="error">* <?php echo $mmErr; ?></span>
-                                    <span class="error">* <?php echo $yyyyErr; ?></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="submit" name="submit" value="Submit">
-                                    <input type="reset" value="reset">
-                                </td>
-                            </tr>
-                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:
+                    <input type="email" name="email" id="">
+                    <span class="error">* <?php echo $emailErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>User Name</td>
+                <td>:
+                    <input type="text" name="uname" id="">
+                    <span class="error">* <?php echo $unameErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:
+                    <input type="password" name="pass" id="">
+                    <span class="error">* <?php echo $passErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td>:
+                    <input type="password" name="cPass" id="">
+                    <span class="error">* <?php echo $cpassErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <input type="radio" name="gender" value="Male" id="">Male
+                        <input type="radio" name="gender" value="Female" id="">Female
+                        <input type="radio" name="gender" value="Other" id="">Other
                     </fieldset>
-                </form>
-            
-<?php 
-    include('footer.php');
+                    <span class="error">* <?php echo $genderErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Date Of Birth</legend>
+                        <input type="tel" name="date" id="" size="1"> /
+                        <input type="tel" name="month" id="" size="1"> /
+                        <input type="tel" name="year" id="" size="1"> <i>(dd/mm/yy)</i>
+                    </fieldset>
+                    <span class="error">* <?php echo $ddErr; ?></span>
+                    <span class="error">* <?php echo $mmErr; ?></span>
+                    <span class="error">* <?php echo $yyyyErr; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Submit">
+                    <input type="reset" value="reset">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+<?php
+include('footer.php');
 ?>

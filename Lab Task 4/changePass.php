@@ -30,52 +30,9 @@ if (isset($_POST['submit'])) {
             echo "PASSWORD CHANGED SUCESSFULLY";
         }
     }
-
-
-
-    /*if (empty($_POST['pass']) || empty($_POST['nPass']) || empty($_POST['repass'])) {
-        echo "Enter Passwords";
-    } else {
-        if ($_SESSION['pass'] != $_POST['pass']) {
-            $cpassErr = "Please enter valid password";
-        } else if ($_POST['pass'] == $_POST['nPass']) {
-            echo "new password cannot be same as old password <br>";
-            echo "try a new one ! <br>";
-        } else if ($_POST['nPass'] != $_POST['repass']) {
-            echo "password and confirm password doesn't match <br>";
-        } else {
-            echo "password changed successfully <br>";
-            $_SESSION['pass'] = $_POST['nPass'];
-        }
-    }*/
 }
 ?>
 
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home --Welcome--</title>
-    <style>
-        .error {
-            color: #FF0000;
-        }
-    </style>
-</head>
-
-<body>
-    <table border="1" width="100%">
-        <tr>
-            <td><img src="file/logo.png" alt=""></td>
-            <td width="600px"> </td>
-            <td align="center">Logged in as <a href=""><?php echo $_SESSION['name']; ?></a> | <a href="logout.php">Logout</a></td>
-        </tr>
-        <tr>
-            <td> -->
 <?php
 include('header.php');
 ?>
@@ -89,6 +46,7 @@ include('header.php');
     <li><a href="editProfile.php">Edit Profile</a></li>
     <li><a href="pictureChange.php">Change Profile Picture</a></li>
     <li><a href="changePass.php">Change Password</a></li>
+    <li><a href="all.php">View All Profiles</a></li>
     <li><a href="logout.php">Logout</a></li>
 </ul>
 </td>
@@ -132,15 +90,6 @@ include('header.php');
 </tr>
 <tr>
     <td height="390px">
-        <!-- </td>
-        </tr>
-        <tr>
-            <td colspan="3" align="center">Copyright &COPY 2021</td>
-        </tr>
-    </table>
-</body>
-
-</html> -->
         <?php
         include('footer.php');
         ?>

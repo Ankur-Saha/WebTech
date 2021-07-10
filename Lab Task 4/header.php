@@ -1,9 +1,4 @@
 <?php
-//  session_start();
-// if (!isset($_SESSION['flag'])) {
-//     header('location: login.php');
-// }
-
 if (empty($_SESSION['flag'])) {
 ?>
 
@@ -34,7 +29,6 @@ if (empty($_SESSION['flag'])) {
 
                 <?php
             } else {
-
                 ?>
 
                     <!DOCTYPE html>

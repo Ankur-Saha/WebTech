@@ -7,18 +7,15 @@ if (isset($_POST['submit'])) {
     $inp = file_get_contents('user.json');
     $temp = json_decode($inp, true);
 
-    if (!empty($_COOKIE["$cookie_name"])) {
-        echo "$_COOKIE[$cookie_name]";
-    }
-
     if (empty($_POST['uname']) || empty($_POST['pass'])) {
-        echo "field cannot be empty";
+        echo "PLEASE ENTER YOUR NAME & PASSWORD";
     } else {
         $f = 0;
         foreach ($temp as $key1 => $value1) {
             if ($temp[$key1]["username"] == $_POST['uname'] and $temp[$key1]["password"] == $_POST['pass']) {
                 $f = 1;
-                $_SESSION['name'] = $temp[$key1]["name"];
+                $_SESSION['uname'] = $temp[$key1]['username'];
+                $_SESSION['name'] = $temp[$key1]['name'];
                 $_SESSION['email'] = $temp[$key1]["email"];
                 $_SESSION['gender'] = $temp[$key1]["gender"];
                 $_SESSION['date'] = $temp[$key1]["date"];
@@ -32,12 +29,13 @@ if (isset($_POST['submit'])) {
             $uname = $_POST['uname'];
             $_SESSION['uname'] = $uname;
             if (!empty($_POST['remember'])) {
-                setcookie("user", $_POST['uname'], time() + 10);
-                setcookie("pass", $_POST['pass'], time() + 10);
+                setcookie("user", $_POST['uname'], time() + 20);
+                setcookie("pass", $_POST['pass'], time() + 20);
             }
+            echo ($_SESSION['name']);
             header('location: dashboard.php');
         } else {
-            echo "invaild user";
+            echo "INVALID USER";
         }
     }
 }
@@ -61,7 +59,7 @@ include('header.php');
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="text" name="pass" value="<?php if (isset($_COOKIE["pass"])) {
+                <td><input type="password" name="pass" value="<?php if (isset($_COOKIE["pass"])) {
                                                                 echo $_COOKIE["pass"];
                                                             } ?>"></td>
             </tr>
@@ -82,7 +80,7 @@ include('header.php');
             </tr>
             <tr>
                 <td>
-                <br>
+                    <br>
                     <input type="submit" name="submit" value="Log In">
                     <a href="forgotpass.php"> Forgot Password?</a>
                 </td>
