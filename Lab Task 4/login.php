@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 $cookie_name = $cookie_pass = "";
 if (isset($_POST['submit'])) {
