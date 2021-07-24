@@ -1,0 +1,26 @@
+.background td{
+    background-color: lightgray;
+    height: 50px;
+}
+
+.left-nav ul li{
+    list-style: none;
+    padding: 10px 30px;
+    width: 170px;
+    margin: 20px 0px;
+    background-color: red;
+    border: none;
+    border-radius: 30px;
+}
+
+.left-nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15pt;
+}
+
+.left-nav ul li:hover{
+    transform: scale(1.2);
+}
+
